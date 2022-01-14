@@ -1,5 +1,7 @@
 let userInput = document.getElementById("inputBox");
 let result = document.getElementById("result");
+let controls = document.getElementById("control");
+let body = document.querySelector("html");
 function verify() {
   let tempVar = userInput.value;
   if (isNaN(tempVar)) {
@@ -19,3 +21,10 @@ function verify() {
     result.classList.remove("invalid");
   }
 }
+body.addEventListener("click", function (e) {
+  if (e.target.tagName != "BUTTON") {
+    userInput.classList.remove("invalidInput");
+    result.classList.remove("invalid");
+    result.innerText = "";
+  }
+});
