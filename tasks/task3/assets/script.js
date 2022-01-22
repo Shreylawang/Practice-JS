@@ -33,6 +33,12 @@ function render() {
     result.classList.add("invalid");
     return;
   }
+  if (isNaN(userNumber)) {
+    result.innerText = "invalid Output";
+    userInput.classList.add("invalidInput");
+    result.classList.add("invalid");
+    return;
+  }
   // Check attempts
   if (attempt == 1) {
     result.innerHTML = `<h2>Noob!<h2/> <p style="font-size: large;">The Correct Number was ${RandomNumber}</p>`;
